@@ -1,18 +1,43 @@
+# ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+# ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+# ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⣴⣤⣤⣤⣤⣤⡄⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+# ⣿⣿⣿⣿⣿⣿⣿⠟⢋⣵⣿⣿⣿⡿⠛⣩⣤⣿⣿⣿⣿⣿⣿⣿⣬⣙⠻⣿⣿⣿⣷⡍⠛⢿⣿⣿⣿⣿⣿⣿
+# ⣿⣿⣿⣿⠟⢹⠃⣠⣾⣿⣿⡿⢋⣴⣿⣿⣿⣿⠿⠿⠈⠿⢿⣿⣿⣿⣷⣤⡙⣿⣿⣿⢦⡀⢣⠙⣿⣿⣿⣿
+# ⣿⣿⡿⡿⠀⡯⠊⣡⣿⣿⠏⣴⣿⣿⣿⠟⠁⣀⣤⣤⠀⣤⣤⡀⠙⠻⣿⣿⣿⣌⢻⣿⣧⡉⠺⡄⢸⠹⣿⣿
+# ⣿⣿⠃⢷⠀⡠⢺⣿⣿⡏⣰⣿⣿⡟⠁⣠⣾⣿⣿⠿⠀⠿⣿⣿⣷⡄⠘⣿⣿⣿⡄⣿⣿⣯⠢⡀⢸⠀⢹⣿
+# ⣿⣿⠀⢸⠊⣠⣿⣿⣿⢀⣿⣿⣿⠁⣰⣿⣿⣿⣿⣆⢀⣼⣿⣿⣿⣿⡄⢸⣿⣿⣿⣹⣿⣿⣦⠈⢺⠀⢸⣿
+# ⣿⠹⡆⠀⣴⢻⣿⣿⣿⢸⣿⣿⣿⠀⣿⣿⡿⠿⠿⢿⣿⠿⠿⠿⣿⣿⡇⢈⣿⣿⣿⠀⣿⣿⣿⠳⡀⢀⡇⢸
+# ⣿⡀⠹⣸⠉⣿⣿⡿⢋⣠⣿⣿⣿⡀⠸⠟⢋⣀⢠⣾⣿⣷⡀⣀⡙⠻⠁⢸⣿⣿⣿⣈⠻⣿⣿⡄⠹⡜⠀⣸
+# ⣿⢧⠀⠇⢠⣿⣿⣷⡘⣿⣿⣿⣟⣁⡀⠘⢿⣿⣿⣿⣿⣿⣿⣿⠿⠀⣠⣉⣿⣿⣿⡿⢠⣿⡿⢧⠀⠁⣰⢿
+# ⣿⡌⢷⡄⣾⠀⣿⣿⣷⡜⢿⣿⣿⣿⣿⣦⣄⠈⠉⠛⠛⠛⠉⢁⣠⣾⣿⣿⣿⣿⡟⣰⣿⣿⡇⢸⢀⡴⠃⣼
+# ⣿⣷⣄⠙⢿⠀⣿⢿⣿⣿⣌⠿⠟⡻⣿⣿⣿⣿⣷⣶⣶⣶⣿⣿⣿⣿⡿⠛⠿⠟⣼⣿⡿⢫⠃⢸⠋⢀⣼⣿
+# ⣿⣿⣟⣶⣄⡀⢸⡀⢻⣿⣿⣾⣿⣿⣶⣍⣙⠛⠿⠿⠿⠿⠿⠛⣋⣥⣶⣿⣿⣾⣿⣿⠁⣸⢀⣴⣶⣯⣿⣿
+# ⣿⣿⣿⣿⣿⣿⠾⣧⠀⢯⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⡿⢫⠃⢠⢷⣛⣉⣽⣿⣿⣿
+# ⣿⣿⣿⣿⣿⣿⣿⣄⣁⡈⢧⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⣠⢋⣀⣠⣴⣾⣿⣿⣿⣿⣿
+# ⣿⣿⣿⣿⣿⣿⣿⣯⣉⠉⠉⠉⣀⣀⡭⠟⠛⢛⣛⠛⠛⠛⣛⠛⠛⠩⣥⣀⣈⢁⢀⣀⣴⣿⣿⣿⣿⣿⣿⣿
+# ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣝⡛⢉⣁⣀⣤⠖⣫⣴⣿⣿⣷⣬⡙⣦⣤⣀⡈⣉⣩⣯⣿⣿⣿⣿⣿⣿⣿⣿⣿
+# ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣼⣿⣿⣿⣿⣿⣿⣿⣧⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+# ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+#
 #    _____ __________     ____        __        __
 #   / ___// ____/ __ \   / __ \____ _/ /_____ _/ /_  ____ _________
 #   \__ \/ /   / /_/ /  / / / / __ `/ __/ __ `/ __ \/ __ `/ ___/ _ \
 #  ___/ / /___/ ____/  / /_/ / /_/ / /_/ /_/ / /_/ / /_/ (__  )  __/
 # /____/\____/_/      /_____/\__,_/\__/\__,_/_.___/\__,_/____/\___/
 #
-#
 #               Created by Darrel (CatRass#5748)
+#
+#               Original Creation Date: 29/11/22
+#                   Last Edited: 15/12/22
 
 import sys
 from PyQt6.QtCore import QSize, Qt
+from PyQt6 import sip
 from PyQt6.QtWidgets import *
 from PyQt6.QtGui import QPalette, QColor, QIcon
 import requests
 from bs4 import BeautifulSoup
+
 
 def SCPScraper(scp):
 
@@ -27,35 +52,30 @@ def SCPScraper(scp):
     soup = BeautifulSoup(htmlSource.text, 'html.parser')    #   htmlSource is transformed into a bs4 object for analysis
     pageContents = soup.find("div", { "id" : "page-content" })  #   The webpage is redyuced to everything within div "page-content"
                                                                 #   ↑ Refer to Folio (Analysis → Research → SCP Wiki Article Structure)
-    headingContents = pageContents
+    relevantPageContents = pageContents.find_all("p")    #   Find all contents with the <p></p> tag
+    allContents = {}
 
-    headings = []   #   Regular headings are styled with <strong></strong> tag
-    text = []    #   Regular headings are styled with <p></p> tag
+    for i in range(0,len(relevantPageContents)):
 
-    for strongTags in headingContents.find_all("strong"):   #   Find all contents with the <strong></strong> tag
-        headings.append(strongTags.get_text())  #   Remove the <strong></strong> tags and append 'headings'
+        try:
+            currentTitle = relevantPageContents[i].find('strong')
+        except:
+            currentTitle = None
 
-    for i in pageContents.find_all('strong'): i.extract()   #   Remove all <strong></strong> tags from pageContents to properly process only text, with no headings
-                                                            #   ↑ This is important as text is structured as <p><strong>Heading</strong>Actual text</p>
+        currentText = relevantPageContents[i]
+        try:
+            for strong in currentText.find_all('strong'): strong.extract()
+            for pTags in currentText.find_all("p"):    #   Find all contents with the <p></p> tag
+                currentText= currentText.get_text()
+        except:
+            pass
 
-    for pTags in pageContents.find_all("p"):    #   Find all contents with the <p></p> tag
-        text.append(pTags.get_text())  #   Remove the <p></p> tags and append 'text'
+        try:
+            allContents[currentTitle.text]=currentText.text
+        except:
+            allContents["None"]=currentText.text
 
-    try:    #   While testing the scraper on SCP-173, it was noticed not all regular SCP Articles have images, and thus would not have captions.
-        imageCaptionBlock = pageContents.find("div", { "class" : "scp-image-caption" }) #   Scraping div id "scp-image-caption" to isolate captions
-        imageCaption = []   #   In regular SCP articles image caption are formatted with <p></p>
-                            #   ↑ This is why it is important to isolate image captions from text as they both use <p> but are in different divs
-        for pTags in imageCaptionBlock.find_all("p"):   #   Find all contents with the <p></p> tag
-            imageCaption.append(pTags.get_text())   #   Remove the <p></p> tags and append to 'imageCaption'
-
-        if len(imageCaption) > 0:
-            for i in imageCaption: text.pop(text.index(i))  #   Remove any image captions from 'text'
-                                                            #   ↑ This is done by checking the index of an image caption in 'text' and then popping it
-        allContents = {"Headings":headings,"Text":text,"Image Captions":imageCaption,}  #   Compile all lists into an accessible dictionary
-    except: #   In case there are no images with captions, execute the following
-        allContents = {"Headings":headings,"Text":text}  #   Compile all lists into an accessible dictionary, without image captions
-
-    return allContents  #   Return the dictionary for future access
+    return allContents
 
 class Color(QWidget):   #   Debug Widget that shows a coloured square
     def __init__(self, color):
@@ -90,6 +110,8 @@ class MainWindow(QMainWindow):
         self.toolSelector = toolSelector(["SCP's","Tales"])
         self.scpInput = inputBar("Enter SCP Number",self.scpSearched)
 
+        self.scpSearchedBool = False
+
         self.setWindowTitle("SCP Database")
         #self.setFixedSize(QSize(400, 300))
 
@@ -107,27 +129,39 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.widget)
 
     def scpSearched(self):
-        scpInfo = SCPScraper(self.scpInput.text())
-        print(scpInfo)
 
-        self.scroll = QScrollArea()
-        self.scpInformation = QWidget()
+        scpInfo = SCPScraper(self.scpInput.text())  #   Store SCPScraper dictionary in a variable
+                                                    #   ↑   scpInfo = {"Heading":"text","Heading2":"text"...}
+        self.scpInformation = QWidget() #   Widget to store all SCP Information
 
-        key = 0
-        for i in range(0,len(scpInfo['Headings'])):
+        index = 1
+        for key in scpInfo:
+
+            objectNameHeading = "Heading {}".format(index)  #   Create ObjectName for Headings
+            objectNameText = "Text {}".format(index)  #   Create ObjectName for Text
+
+            if self.scpSearchedBool == True:    #   Default self.scpSearchedBool is False
+                                                #   ↑ If True, then the screen is filled with previous text
+                self.layout.removeWidget(self.scpHeadingLabel.objectNameHeading)    #   Atempted Removal of previous Headings
+                self.scpHeadingLabel = None
+                self.layout.removeWidget(self.scpTextLabel.objectNameText)  #   #   Atempted Removal of previous Text
+                self.scpTextLabel = None
 
             self.scpHeadingLabel = QLabel(self.scpInformation)
-            self.scpHeadingLabel.setText(scpInfo['Headings'][i])
-            self.scpHeadingLabel.setObjectName("Heading")
+            self.scpHeadingLabel.setText(key)   #   Set Heading to current key
+            self.scpHeadingLabel.setObjectName(objectNameHeading)   #   Create addressable name based on index
 
             self.scpTextLabel = QLabel(self.scpInformation)
-            self.scpTextLabel.setText(scpInfo['Text'][i])
-            self.scpTextLabel.setObjectName("Text")
+            self.scpTextLabel.setText(scpInfo[key])  #   Set Text to Text at current key of scpInfo
+            self.scpTextLabel.setObjectName(objectNameText) #   Create addressable name based on index
+            self.scpTextLabel.setWordWrap(True)
 
-            self.layout.addWidget(self.scpHeadingLabel, key, 0)
-            self.layout.addWidget(self.scpTextLabel, key, 1)
+            self.layout.addWidget(self.scpHeadingLabel, index, 0)
+            self.layout.addWidget(self.scpTextLabel, index, 1)
 
-            key += 1
+            index += 1
+
+        self.scpSearchedBool = True #   Indicate that the page has contents on it
 
 
 app = QApplication(sys.argv)
