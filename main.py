@@ -42,8 +42,8 @@ from bs4 import BeautifulSoup
 def SCPScraper(scp):
 
         #   This function is responsible for scraping the SCP Wiki and collecting all the relevant information for displaying it on the database GUI. Currently it collects:
-        #       - Headings
-        #       - Paragaphs/Text
+        #       - Headings  (<strong></strong>)
+        #       - Paragaphs/Text (<p></p>)
         #       - Image Captions
         #   This is accomplished through grabbing a specific pages source code using Requests, and breaking the scraped code with BeautifulSoup
 
@@ -53,28 +53,32 @@ def SCPScraper(scp):
     pageContents = soup.find("div", { "id" : "page-content" })  #   The webpage is redyuced to everything within div "page-content"
                                                                 #   ↑ Refer to Folio (Analysis → Research → SCP Wiki Article Structure)
     relevantPageContents = pageContents.find_all("p")    #   Find all contents with the <p></p> tag
+
     allContents = {}
+    currentKey = "None" #   In case text doesnt have a heading, the previous one will be used
 
     for i in range(0,len(relevantPageContents)):
 
-        try:
-            currentTitle = relevantPageContents[i].find('strong')
+        try:    #   Not every piece of text will have a heading, hence a try except statement in case it does not.
+            currentTitle = relevantPageContents[i].find('strong')   #   If a heading is found add to variable
         except:
-            currentTitle = None
+            currentTitle = None #   If a heading not found, make None
 
-        currentText = relevantPageContents[i]
-        try:
+        currentText = relevantPageContents[i]   #   Set text to the current item
+
+        if currentTitle != None:
             for strong in currentText.find_all('strong'): strong.extract()
             for pTags in currentText.find_all("p"):    #   Find all contents with the <p></p> tag
-                currentText= currentText.get_text()
-        except:
-            pass
+                currentText= currentText.get_text() #   Remove <p></p> tags
+            allContents[currentTitle.text]=currentText.text #   Append text into dictionary
+            currentKey = currentTitle.text  #   Set the previous key in case next item has no heading
+        else:
+            try:    #   In case this is the first item without a heading, we use try/except
+                allContents[currentKey]+=(currentText.text+"\n\n")  #   Add to previous heading
+            except:
+                allContents[currentKey]=currentText.text    #   If no previous heading, create new one with currrentKey
 
-        try:
-            allContents[currentTitle.text]=currentText.text
-        except:
-            allContents["None"]=currentText.text
-
+    print("SCP {} Scraped Info:".format(str(scp)),allContents)
     return allContents
 
 class Color(QWidget):   #   Debug Widget that shows a coloured square
@@ -133,33 +137,20 @@ class MainWindow(QMainWindow):
         scpInfo = SCPScraper(self.scpInput.text())  #   Store SCPScraper dictionary in a variable
                                                     #   ↑   scpInfo = {"Heading":"text","Heading2":"text"...}
         self.scpInformation = QWidget() #   Widget to store all SCP Information
+        self.scpInfoTextBrowser = QTextEdit(readOnly = False)
+        self.scpInfoTextBrowser.clear()
 
         index = 1
         for key in scpInfo:
 
-            objectNameHeading = "Heading {}".format(index)  #   Create ObjectName for Headings
-            objectNameText = "Text {}".format(index)  #   Create ObjectName for Text
-
-            if self.scpSearchedBool == True:    #   Default self.scpSearchedBool is False
-                                                #   ↑ If True, then the screen is filled with previous text
-                self.layout.removeWidget(self.scpHeadingLabel.objectNameHeading)    #   Atempted Removal of previous Headings
-                self.scpHeadingLabel = None
-                self.layout.removeWidget(self.scpTextLabel.objectNameText)  #   #   Atempted Removal of previous Text
-                self.scpTextLabel = None
-
-            self.scpHeadingLabel = QLabel(self.scpInformation)
-            self.scpHeadingLabel.setText(key)   #   Set Heading to current key
-            self.scpHeadingLabel.setObjectName(objectNameHeading)   #   Create addressable name based on index
-
-            self.scpTextLabel = QLabel(self.scpInformation)
-            self.scpTextLabel.setText(scpInfo[key])  #   Set Text to Text at current key of scpInfo
-            self.scpTextLabel.setObjectName(objectNameText) #   Create addressable name based on index
-            self.scpTextLabel.setWordWrap(True)
-
-            self.layout.addWidget(self.scpHeadingLabel, index, 0)
-            self.layout.addWidget(self.scpTextLabel, index, 1)
+            self.scpInfoTextBrowser.append(key)
+            self.scpInfoTextBrowser.append(scpInfo[key])
+            self.scpInfoTextBrowser.append('')
 
             index += 1
+
+        self.layout.addWidget(self.scpInfoTextBrowser,1,0)
+        self.scpInfoTextBrowser.setReadOnly(True)
 
         self.scpSearchedBool = True #   Indicate that the page has contents on it
 
