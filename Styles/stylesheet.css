@@ -1,0 +1,37 @@
+/* Note:
+Reference:
+  https://doc.qt.io/qt-6/stylesheet-reference.html
+Syntax:
+  https://doc.qt.io/qt-6/stylesheet-syntax.html
+Examples:
+  https://doc.qt.io/qt-6/stylesheet-examples.html
+*/
+
+QTextEdit {
+  color: yellow;
+  background: #333232;
+  border-radius: 5px;
+  /* background-color: #333232 */
+  }
+
+inputBar {
+  color: white;
+  background: #252525;
+  border-radius: 5px;
+  border: 2px solid #333232;
+  border-style: solid;
+  }
+
+QPushButton {
+    color: white;
+    background: #252525;
+    border-radius: 5px;
+    border: 2px solid #333232;
+    outline-style: outset;
+    }
+
+  MainWindow {
+    background: #252525;
+    width: 10px; /* when vertical */
+    height: 10px; /* when horizontal */
+}
